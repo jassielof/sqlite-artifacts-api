@@ -1,21 +1,3 @@
-```txt
-npm install
-npm run dev
-```
+# SQLite Artifacts API
 
-```txt
-npm run deploy
-```
-
-[For generating/synchronizing types based on your Worker configuration run](https://developers.cloudflare.com/workers/wrangler/commands/#types):
-
-```txt
-npm run cf-typegen
-```
-
-Pass the `CloudflareBindings` as generics when instantiation `Hono`:
-
-```ts
-// src/index.ts
-const app = new Hono<{ Bindings: CloudflareBindings }>()
-```
+This API provides access to the 10 latest SQLite artifacts from the official SQLite website, with a convenient caching mechanism to not overload the SQLite server, and a convenient `latest` endpoint to get the latest artifact.
